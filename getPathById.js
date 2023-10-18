@@ -6,8 +6,9 @@
  */
 const getPathByIdRecursive = (tree, id) => {
   let result = []
+  let path = []
 
-  const findById = (children, path) => {
+  const traverse = (children) => {
     if (!children) return console.log('空了')
     for (let index = 0; index < children.length; index++) {
       const element = children[index]
@@ -19,12 +20,12 @@ const getPathByIdRecursive = (tree, id) => {
         return element.id
       }
 
-      findById(element.children, path)
+      traverse(element.children)
       path.pop()
     }
   }
 
-  findById(tree, [])
+  traverse(tree)
 
   return result
 }
@@ -86,5 +87,5 @@ const data = [
     ],
   },
 ]
-console.log(getPathByIdRecursive(data, '112')) // 输出 [1， 11， 112]
+console.log(getPathByIdRecursive(data, '122')) // 输出 [1， 11， 112]
 console.log(getPathByIdLoop(data, '122').map(v => v.id)) // 输出 [1， 11， 112]
