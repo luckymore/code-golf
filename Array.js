@@ -20,4 +20,22 @@ console.log([1,2,3].reduce((a,b) => a + b), 6)
 console.log([1,2,3].reduce((a,b) => a + b, 6), 12)
 console.log([].reduce((a,b) => a + b, 6), 6)
 console.log([6].reduce((a,b) => a + b), 6)
-console.log([].reduce((a,b) => a + b))
+// console.log([].reduce((a,b) => a + b))
+
+Array.prototype.flat = function(depth = 1) {
+  if (depth === 0) {
+    return this
+  }
+  const result = []
+  this.forEach(item => {
+    if (Array.isArray(item)) {
+      result.push(...item.flat(depth - 1))
+    } else {
+      result.push(item)
+    }
+  })
+  return result
+}
+
+// console.log([].flat(2))
+console.log([1,[2,[3,[4]]]].flat(3))
