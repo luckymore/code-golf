@@ -1,5 +1,6 @@
 /**
- * 去除连续重复的字符串
+ * 去除连续重复的字符串 
+ * @memberof 百度
  * @example
  * 'aaabc' -> 'bc'
  * 'daaadbc' -> 'bc'， 因为 'daaadbc' -> 'ddbc' -> 'bc'

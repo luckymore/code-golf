@@ -90,3 +90,11 @@ const data = [
 ]
 console.log(getPathByIdRecursive(data, '122')) // 输出 [1， 11， 112]
 console.log(getPathByIdLoop(data, '122').map(v => v.id)) // 输出 [1， 11， 112]
+
+
+
+compose函数，进阶AsyncCompose
+compose(fn1, fn2, fn3)(10) //
+AsyncCompose(fn1, fn2, fn3)(10).then(data => console.log(data))
+
+isHasCircle，判读对象是否有循环引用
