@@ -1,4 +1,5 @@
 /**
+ * https://github.com/wintc23/js-tree-tool/blob/master/index.js
  * 已知树节点，获取树的节点路径
  * @param {*} tree
  * @param {*} id
