@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "no-unused-vars": 2,
+    "indent": "error"
+  }
+}

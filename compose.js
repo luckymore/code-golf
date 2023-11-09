@@ -13,9 +13,14 @@ const compose = (...fns) => {
   //   }
   //   return res
   // }
-  return async val => fns.reduce(async (acc, curr) => {
+  return async val => {
+    const p = fns.reduce(async (acc, curr) => {
       return curr(await acc)
     }, val)
+    console.log(p)
+    return p
+  }
 }
 
-compose(add, fn2, fn3)(10).then(console.log)
+console.log('start...')
+compose(add, fn2, fn3, fn3)(10).then(console.log)
