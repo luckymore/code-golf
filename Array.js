@@ -39,3 +39,13 @@ Array.prototype.flat = function(depth = 1) {
 
 // console.log([].flat(2))
 console.log([1,[2,[3,[4]]]].flat(3))
+
+Array.prototype.map = function(cb, thisArg) {
+  const result = []
+  for (let i = 0; i < this.length; i++) {
+    result.push(cb.call(thisArg, this[i], i, this))
+  }
+  return result
+}
+
+console.log([1,2,3].map(item => item * 2))
