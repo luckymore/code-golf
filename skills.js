@@ -41,3 +41,17 @@ const toRandom2DArray = arr => {
 console.log('toRandom2DArray([1,2,3,4,6,7,7,8]):', JSON.stringify(toRandom2DArray([1,2,3,4,6,7,7,8])))
 
 
+Array.prototype.findMinUnitBySum = function(sum) {
+  const hash = {}
+  for (let i = 0; i < this.length; i++) {
+    const targetIndex = this.indexOf(sum - this[i], i + 1)
+    if (targetIndex > -1) {
+      hash[this[i] * this[targetIndex]] = [this[i], this[targetIndex]]
+    }
+  }
+
+  return hash[Math.min(...Object.keys(hash))]
+}
+
+console.log('findMinUnitBySum', [-1,-1,0,-2,-3,-4,-5].findMinUnitBySum(-4))
+
