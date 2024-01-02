@@ -51,7 +51,7 @@ const a = {
 
 function proxyObj(obj) {
   // code here
-  new Proxy
+  new Proxy(obj, )
 }
 
 const proxyA = proxyObj(a);
